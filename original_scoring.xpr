@@ -10234,6 +10234,26 @@ ${caret}</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>../../dime-mei-edition/165_2625/dmeedtA_165-001_2626.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>reorder-staves (DEBUG output)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>tests/main.xspec</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -10503,7 +10523,7 @@ ${caret}</String>
                                     </serializableOrderedMap>
                                 </field>
                                 <field name="name">
-                                    <String>origScoring</String>
+                                    <String>reorder-staves (DEBUG output)</String>
                                 </field>
                                 <field name="baseURL">
                                     <String></String>
@@ -10542,7 +10562,7 @@ ${caret}</String>
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputResource">
-                                    <String>${cfn}_reordered.mei</String>
+                                    <String>C:/Users/sapov/WORKSPACE/DEVELOPMENT/DIME/DEBUG/original_scoring/${cfn}_reordered.mei</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -15045,6 +15065,11 @@ ${caret}</String>
     <projectTree name="original_scoring.xpr">
         <folder masterFiles="true" name="Master Files">
             <file name="main.xsl"/>
+        </folder>
+        <folder idw="2625" name="165_2625">
+            <file idw="2626" name="../../dime-mei-edition/165_2625/dmeedtA_165-001_2626.xml"/>
+            <file idw="2628" name="../../dime-mei-edition/165_2625/dmeedtA_165-003_2628.xml"/>
+            <file idw="2629" name="../../dime-mei-edition/165_2625/dmeedtA_165-004_2629.xml"/>
         </folder>
         <folder name="EDITION">
             <folder name="Edition gefiltert">

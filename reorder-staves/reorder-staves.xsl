@@ -7,7 +7,7 @@
 
   <!--This parameter is a needed for XSpec. Cf. https://github.com/xspec/xspec/wiki/Global-Context-Item-->
   <param name="global-context-item" select="."/>
-  <param name="source"/>
+  <param as="xs:string" select="'source_A'" name="source"/>
 
 
   <xd:doc>
