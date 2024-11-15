@@ -1,0 +1,3 @@
+[submodule "lib"]
+	path = lib
+	url = https://gitlab.mozarteum.at/dme/dime/tools/lib.git
