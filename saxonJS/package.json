@@ -1,0 +1,15 @@
+{
+  "name": "saxonjs-dme-testing",
+  "version": "1.0.0",
+  "description": "Testing environment for xslt execution in the context of the original scoring project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oleksii Sapov-Erlinger",
+  "license": "ISC",
+  "dependencies": {
+    "saxon-js": "^2.7.0",
+    "xslt3": "^2.7.0"
+  }
+}
