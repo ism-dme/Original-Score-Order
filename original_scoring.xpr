@@ -15559,6 +15559,7 @@ ${caret}</String>
         </folder>
         <folder path="../../../dev_help/"/>
         <folder path="../../DEBUG/"/>
+        <folder path="../extract-parts/"/>
         <folder path="."/>
     </projectTree>
 </project>
