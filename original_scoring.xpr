@@ -10234,6 +10234,26 @@ ${caret}</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>../../DEBUG/original_scoring/dmeedtA_165-001_2626_reordered.mei</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>3/DIME/DIME.framework/edition/extract-parts</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>../../dime-mei-edition/165_2625/dmeedtA_165-001_2626.xml</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -15064,7 +15084,7 @@ ${caret}</String>
     </meta>
     <projectTree name="original_scoring.xpr">
         <folder masterFiles="true" name="Master Files">
-            <file name="main.xsl"/>
+            <file name="../extract-parts/main.xsl"/>
         </folder>
         <folder idw="2625" name="165_2625">
             <file idw="2626" name="../../dime-mei-edition/165_2625/dmeedtA_165-001_2626.xml"/>
