@@ -4,4 +4,4 @@ Testing repository for the [Original Scoring](https://gitlab.mozarteum.at/groups
 
 Commands:
 - Run reorder-staves: `node node_modules/xslt3/xslt3.js "-s:./input/dmeedtA_165-001_2626.xml" "-xsl:./xsl/reorder-staves.sef.json" "-o:./output/dmeedtA_165-001_2626_reordered.xml"`
-- Run extract-parts: `node node_modules/xslt3/xslt3.js "-s:./input/dmeedtA_165-001_2626_reordered.xml" "-xsl:./xsl/extract-parts.sef.json" "-o:./output/dmeedtA_165-001_2626_split.xml"`
+- Run extract-parts: `node node_modules/xslt3/xslt3.js "-s:./input/dmeedtA_165-001_2626_reordered.xml" "-xsl:./xsl/extract-parts.sef.json" "-o:./output/dmeedtA_165-001_2626_split.xml" "?P_MOVI=true()"`
