@@ -10234,11 +10234,31 @@ ${caret}</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>../extract-parts/tests/data/K165/01/dmeedtA_165-001_2626.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>3/DIME/DIME.framework/edition/original-scoring-K165</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>../../DEBUG/original_scoring/dmeedtA_165-001_2626_reordered.mei</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>3/DIME/DIME.framework/edition/extract-parts</String>
+                                        <String>3/DIME/DIME.framework/edition/original-scoring-K165</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
