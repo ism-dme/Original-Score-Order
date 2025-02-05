@@ -40,10 +40,9 @@ After opening the project, you can apply the transformation scenario `original-s
 <img width="400" alt="Extraction of the first violin part." src="./docs/pct/transformationScenario.png">
 
 
-
 This will output transformed MEI files to the `./mei/source/output` folder.
 
-<img width="300" alt="Extraction of the first violin part." src="./docs/pct/meiFolder.png">
+<hr>
 
 Alternatively, you can use the free saxonJS processor using the command line. First you need to install nodeJS. Then run the following commands from the root of the repository.
 
@@ -65,7 +64,7 @@ The pipeline consists of two distinct XSLT transformations:
 1. `reorder_staves`
 2. `extract-parts`
 
-The folder `./dist`contains compiled files for these transformations that can be used with the Saxon processor. THe folder `./dist/xsef` contains files for use with the Java version of the Saxon and the folder `./dist/sef` contains files for use with saxonJS.
+The folder `./dist`contains compiled files for these transformations that can be used with the Saxon processor. The folder `./dist/xsef` contains files for use with the Java version of the Saxon and the folder `./dist/sef` contains files for use with saxonJS.
 
 THe source files are located in the following folders:
 
