@@ -4,6 +4,11 @@
   <doc scope="stylesheet">
     <desc>
       <i>Versions</i>: <p>
+        <b>0.0.2</b> (2025-02-05) <ul>
+          <li>Update for KV 165</li>
+        </ul>
+      </p>
+      <i>Versions</i>: <p>
         <b>0.0.2</b> (2022-03-28) <ul>
           <li>Rename origScoring -> switch2origScore</li>
         </ul>

@@ -3,7 +3,7 @@
 
   <xi:include href="docs.xsl" xpointer="element(/1/1)"/>
   <import href="changeLog.xsl"/>
-  <include href="../lib/basic.xsl"/>
+  <include href="basic.xsl"/>
 
   <!--This parameter is a needed for XSpec. Cf. https://github.com/xspec/xspec/wiki/Global-Context-Item-->
   <param name="global-context-item" select="."/>
