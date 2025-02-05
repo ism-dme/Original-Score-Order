@@ -9,3 +9,7 @@
 # Documents
 *.pdf binary
 
+
+
+# Ensures that when merging from main, their versions in publish stay unchanged.
+original_scoring.xpr merge=keep-publish
