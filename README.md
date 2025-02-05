@@ -24,7 +24,7 @@ The differences in the score order are as follows:
 
 <hr>
 
-The Digital Moz a transformation tool has been developed to convert a standard score order into the original score order. The process consists of the following steps:
+DME has developed a tool that transforms the standard score order to the original score order. The process consists of the following steps:
 
 2. Replacing the `<scoreDef>` element and reordering the staves.
 3. Splitting oboe parts.
