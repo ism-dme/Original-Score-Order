@@ -55,7 +55,7 @@ npm i
 ```
 # Run transformation
 # Replace <movementNo> by '1' or '4' depending which movement of KV 165 you want to process.
-node .\reorder-staves.js <movementNo>
+node .\original_scoring.js <movementNo>
 ```
 
 # Developing
