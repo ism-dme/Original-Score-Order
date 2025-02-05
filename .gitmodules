@@ -1,4 +1,3 @@
-[submodule "lib"]
-	path = lib
-	url = https://gitlab.mozarteum.at/dme/dime/tools/lib.git
-	branch = main
+[submodule "Extract-Parts"]
+	path = Extract-Parts
+	url = https://github.com/ism-dme/Extract-Parts
