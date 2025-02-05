@@ -10102,6 +10102,17 @@ ${caret}</String>
                                     <Boolean>false</Boolean>
                                 </field>
                             </fileTypeAssociation>
+                            <fileTypeAssociation>
+                                <field name="extension">
+                                    <String>gitattributes</String>
+                                </field>
+                                <field name="contentType">
+                                    <String>text/plain</String>
+                                </field>
+                                <field name="defaultExtension">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </fileTypeAssociation>
                         </fileTypeAssociation-array>
                     </entry>
                     <entry>
