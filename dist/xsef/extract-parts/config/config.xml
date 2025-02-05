@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="styles.css"?>
+<parameters xmlns="http://www.mozarteum.at/ns/dme">
+  <parts>
+    <part staff="1"/>
+    <part staff="2"/>
+    <part staff="3"/>
+    <part split="yes" staff="4"/>
+    <part staff="5"/>
+    <part staff="6"/>
+    <part staff="7"/>
+  </parts>
+  <renumberStaves>yes</renumberStaves>
+</parameters>

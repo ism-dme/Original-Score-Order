@@ -10234,6 +10234,46 @@ ${caret}</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>mei/source/dmeedtA_165-001.mei</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>original-scoring-KV165</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>mei/source/dmeedtA_165-004.mei</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>original-scoring-KV165</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>../extract-parts/tests/data/K165/01/dmeedtA_165-001_2626.xml</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -10259,26 +10299,6 @@ ${caret}</String>
                                 <field name="scenarioIds">
                                     <list>
                                         <String>3/DIME/DIME.framework/edition/original-scoring-K165</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../dime-mei-edition/165_2625/dmeedtA_165-001_2626.xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>reorder-staves (DEBUG output)</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -10472,6 +10492,26 @@ ${caret}</String>
                                     </list>
                                 </field>
                             </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../dime-mei-edition/165_2625/dmeedtA_165-001_2626.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>3/DIME/DIME.framework/edition/original-scoring-K165</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
                         </scenarioAssociation-array>
                     </entry>
                     <entry>
@@ -10563,7 +10603,7 @@ ${caret}</String>
                                     </serializableOrderedMap>
                                 </field>
                                 <field name="name">
-                                    <String>reorder-staves (DEBUG output)</String>
+                                    <String>original-scoring-KV165</String>
                                 </field>
                                 <field name="baseURL">
                                     <String></String>
@@ -10581,7 +10621,7 @@ ${caret}</String>
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>${pdu}/reorder-staves/reorder-staves.xsl</String>
+                                    <String>${pdu}/dist/xsef/reorder-staves.sef.xsef</String>
                                 </field>
                                 <field name="inputXMLURL">
                                     <String>${currentFileURL}</String>
@@ -10602,7 +10642,7 @@ ${caret}</String>
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputResource">
-                                    <String>C:/Users/sapov/WORKSPACE/DEVELOPMENT/DIME/DEBUG/original_scoring/${cfn}_reordered.mei</String>
+                                    <String>${pdu}/mei/output/${cfn}_Autograph.mei</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -10634,6 +10674,30 @@ ${caret}</String>
                                             <field name="paramDescription">
                                                 <paramDescriptor>
                                                     <field name="localName">
+                                                        <String>P_OVERWRITE_FILE</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>true()</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>true</Boolean>
+                                            </field>
+                                            <field name="isStatic">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
                                                         <String>source</String>
                                                     </field>
                                                     <field name="prefix">
@@ -10657,7 +10721,9 @@ ${caret}</String>
                                     </list>
                                 </field>
                                 <field name="cascadingStylesheets">
-                                    <String-array/>
+                                    <String-array>
+                                        <String>${pdu}/dist/xsef/extract-parts/main.sef.xsef</String>
+                                    </String-array>
                                 </field>
                                 <field name="xslTransformer">
                                     <String>Saxon-EE</String>
