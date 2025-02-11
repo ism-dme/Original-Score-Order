@@ -1,7 +1,7 @@
 # Original Score Order of KV 165
 
 
-This repository contains the MEI encoding of the [Exsultate, jubilate](https://kv.mozarteum.at/de/work/exsultate-jubilate-2625), KV 165 (first and fourth movements) by W. A. Mozart and a transformation tool that changes the score order. The encodings and the tool were developed in the context of the [Digital Mozart Edition](dme.mozarteum.at) (DME), a long-term research and editing project of the International Mozarteum Foundation (Salzburg, Austria) and the Packard Humanities Institute (Los Altos, USA).
+This repository contains the MEI encoding of the motet [Exsultate, jubilate](https://kv.mozarteum.at/de/work/exsultate-jubilate-2625), KV 165 (first and fourth movements) by W. A. Mozart and a transformation tool that changes the score order. The encodings and the tool were developed in the context of the [Digital Mozart Edition](dme.mozarteum.at) (DME), a long-term research and editing project of the International Mozarteum Foundation (Salzburg, Austria) and the Packard Humanities Institute (Los Altos, USA).
 
 
 - [Introduction](#introduction)
@@ -26,8 +26,8 @@ The differences in the score order are as follows:
 
 DME has developed a tool that transforms the standard score order to the original score order. The process consists of the following steps:
 
-2. Replacing the `<scoreDef>` element and reordering the staves.
-3. Splitting oboe parts.
+1. Replacing the `<scoreDef>` element and reordering the staves.
+2. Splitting oboe parts.
 
 <img width="600" alt="Extraction of the first violin part." src="./docs/pct/transformationPipeline.png">
 
