@@ -1,7 +1,7 @@
-# Original Score Order of KV 165
+# Original Score Order
 
 
-This repository contains the MEI encoding of the motet [Exsultate, jubilate](https://kv.mozarteum.at/de/work/exsultate-jubilate-2625), KV 165 (first and fourth movements) by W. A. Mozart and a transformation tool that changes the score order. The encodings and the tool were developed in the context of the [Digital Mozart Edition](dme.mozarteum.at) (DME), a long-term research and editing project of the International Mozarteum Foundation (Salzburg, Austria) and the Packard Humanities Institute (Los Altos, USA).
+This repository contains a tool for modifying the score order, along with example MEI encodings on which the tool operates. Both were developed as part of the [Digital Mozart Edition](dme.mozarteum.at) (DME), a long-term research and editing project of the Mozarteum Foundation Salzburg (Austria) and the Packard Humanities Institute (Los Altos, USA).
 
 
 - [Introduction](#introduction)
@@ -12,7 +12,7 @@ This repository contains the MEI encoding of the motet [Exsultate, jubilate](htt
 
 ## Introduction
 
-The MEI files are encoded using the _Neue Mozart Ausgabe_ as a reference source, which uses the standard score order (see the image on the left). The transformation changes the score order to the one originally used by the composer.
+The MEI files include the first and fourth movements of the motet [Exsultate, jubilate](https://kv.mozarteum.at/de/work/exsultate-jubilate-2625), KV 165 (first and fourth movements) by W. A. Mozart. The encodings use the _Neue Mozart Ausgabe_ as a reference source, which follows the standard score order (see the image on the left). The transformation changes the score order to the one originally used by the composer.
 
 The differences in the score order are as follows:
 
@@ -20,7 +20,7 @@ The differences in the score order are as follows:
 - the _Soprano_ part has a different clef
 - the oboe parts are split onto two staves in the Autograph
 
-<img width="600" alt="Extraction of the first violin part." src="./docs/pct/NMAvsAutograph.png">
+<img width="600" alt="NMA vs. Autograph." src="./docs/pct/NMAvsAutograph.png">
 
 <hr>
 
@@ -29,7 +29,7 @@ DME has developed a tools pipeline that transforms the standard score order to t
 1. Reordering the staves.
 2. Splitting oboe parts.
 
-<img width="600" alt="Extraction of the first violin part." src="./docs/pct/transformationPipeline.png">
+<img width="600" alt="Transformation pipeline." src="./docs/pct/transformationPipeline.png">
 
 ## Installation and Usage
 
@@ -37,7 +37,7 @@ The transformation pipeline is implemented in XSLT. For users of the oXygen XML 
 
 After opening the project, you can apply the transformation scenario `original-score-order-KV165` to the files located in `./mei/source` folder.
 
-<img width="400" alt="Extraction of the first violin part." src="./docs/pct/transformationScenario.png">
+<img width="400" alt="Transformation scenario." src="./docs/pct/transformationScenario.png">
 
 
 This will output transformed MEI files to the `./mei/source/out` folder.
