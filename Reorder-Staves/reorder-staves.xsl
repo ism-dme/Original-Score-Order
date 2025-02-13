@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <stylesheet exclude-result-prefixes="xs xd dme functx dita mei map array" extension-element-prefixes="ixsl" version="3.0" xmlns="http://www.w3.org/1999/XSL/Transform" xmlns:array="http://www.w3.org/2005/xpath-functions/array" xmlns:dita="http://dita-ot.sourceforge.net" xmlns:dme="http://www.mozarteum.at/ns/dme" xmlns:functx="http://www.functx.com" xmlns:ixsl="http://saxonica.com/ns/interactiveXSLT" xmlns:map="http://www.w3.org/2005/xpath-functions/map" xmlns:mei="http://www.music-encoding.org/ns/mei" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.music-encoding.org/ns/mei">
 
-  <xi:include href="docs.xsl" xpointer="element(/1/1)"/>
-  <import href="changeLog.xsl"/>
   <include href="basic.xsl"/>
+
+
+  <param as="xs:string" name="P_SOURCE" />
+  <param as="xs:string?" name="P_STAVES_MAPPING"/>
 
   <!--This parameter is a needed for XSpec. Cf. https://github.com/xspec/xspec/wiki/Global-Context-Item-->
   <param name="global-context-item" select="."/>
-  <param as="xs:string" select="'source_A'" name="source"/>
-
 
   <xd:doc>
     <xd:desc>
       <xd:p>Replace current scoreDef with the alternative. Note that this should be defined in the following-sibling &lt;choice&gt;.</xd:p>
     </xd:desc>
   </xd:doc>
-  <template match="scoreDef[not(@corresp = concat('#', $source))]">
-    <copy-of select="following-sibling::choice[@type = 'scoring']/*[@corresp = concat('#', $source)]/scoreDef"/>
+  <template match="scoreDef[not(@corresp = concat('#', $P_SOURCE))]">
+    <copy-of select="following-sibling::choice[@type = 'scoring']/*[@corresp = concat('#', $P_SOURCE)]/scoreDef"/>
   </template>
 
   <xd:doc>
@@ -29,35 +29,17 @@
       <xd:p>Map staffDef@n of the new scoreDef and @dme.parts.</xd:p>
     </xd:desc>
   </xd:doc>
-  <variable as="map(xs:integer, xs:integer)*" name="map_staves_order">
-    <!--<for-each select="$global-context-item//mei:choice[@type = 'scoring']/*[@corresp = concat('#', $source)]/mei:scoreDef">
-      <map>
-        <for-each select="descendant::mei:staffDef">
-          <map-entry key="string(@n)" select="@dme.parts"/>
-        </for-each>
-      </map>
-    </for-each>-->
-    <sequence select="
-        map {
-          1: 4,
-          2: 5,
-          3: 1,
-          4: 2,
-          5: 3,
-          6: 6,
-          7: 7
-        }"/>
-    <!--    <sequence select="
-        map {
-          '1': 4,
-          '2': 5,
-          '3': 1,
-          '4': 2,
-          '5': 3,
-          '6': 6,
-          '7': 7
-        }"/>-->
-
+  <variable as="map(xs:string, xs:double)*" name="map_staves_order">
+    <choose>
+      <when test="string-length($P_STAVES_MAPPING) > 0">
+        <message>Using staves mapping from the parameter $P_STAVES_MAPPING!</message>
+        <sequence select="parse-json($P_STAVES_MAPPING)"/>
+      </when>
+      <otherwise>
+        <message>Using staves mapping from config-staves-mapping.json!</message>
+        <sequence select="json-doc('config-staves-mapping.json')"/>
+      </otherwise>
+    </choose>
   </variable>
 
   <xd:doc>
@@ -68,7 +50,7 @@
   <variable as="xs:integer" name="count_staves" select="
       max(for $a in map:keys($map_staves_order)
       return
-        $a)"/>
+        xs:integer($a))"/>
 
   <xd:doc>
     <xd:desc>
@@ -101,8 +83,8 @@
       <variable as="element()" name="currentMeasure" select="."/>
 
       <for-each select="1 to $count_staves">
-        <variable  name="currentItem" select="."/>
-        <for-each select="$currentMeasure/child::staff[map:get($map_staves_order, xs:integer(@n)) = $currentItem]">
+        <variable name="currentItem" select="."/>
+        <for-each select="$currentMeasure/child::staff[map:get($map_staves_order, xs:string(@n)) = $currentItem]">
           <copy>
             <attribute name="n" select="$currentItem"/>
             <apply-templates select="(@* except @n) | node()"/>
@@ -133,7 +115,7 @@
       <choose>
         <when test="@staff">
           <copy>
-            <attribute name="staff" select="map:get($map_staves_order, xs:integer(@staff))"/>
+            <attribute name="staff" select="map:get($map_staves_order, xs:string(@staff))"/>
             <apply-templates select="@* except @staff"/>
             <if test="node()">
               <call-template name="update_staff_controlEvents">

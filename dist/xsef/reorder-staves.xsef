@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns='http://ns.saxonica.com/xslt/export' xmlns:fn='http://www.w3.org/2005/xpath-functions' xmlns:java-type='http://saxon.sf.net/java-type' xmlns:vv='http://saxon.sf.net/generated-variable' xmlns:xs='http://www.w3.org/2001/XMLSchema' when='2025-02-13T12:06:26.4056622+01:00' id='0' version='30' packageVersion='1' saxonProduct='SAXON-EE' saxonVersion='12.3' buildDateTime='2025-02-13T12:06:26.4056622+01:00' target='EE' targetVersion='1' relocatable='true' implicit='true'>
+ <co id='0' binds='1'>
+  <globalVariable name='Q{}count_staves' as='1ADI' line='55' module='reorder-staves.xsl' slots='2' visibility='PRIVATE'>
+   <check defaultElementNS='http://www.music-encoding.org/ns/mei' ns='=http://www.w3.org/1999/XSL/Transform array=~ dita=http://dita-ot.sourceforge.net dme=http://www.mozarteum.at/ns/dme functx=http://www.functx.com ixsl=~ map=~ mei=http://www.music-encoding.org/ns/mei xd=http://www.oxygenxml.com/ns/doc/xsl xi=http://www.w3.org/2001/XInclude xs=~ xsl=~ xml=~' line='55' card='1' diag='3|0|XTTE0570|count_staves'>
+    <fn name='max'>
+     <for var='Q{}a' as='A' slot='1'>
+      <ifCall role='in' name='Q{http://www.w3.org/2005/xpath-functions/map}keys' type='*A'>
+       <check card='1' diag='0|0||map:keys'>
+        <gVarRef name='Q{}map_staves_order' bSlot='0'/>
+       </check>
+      </ifCall>
+      <cast role='return' flags='a' as='1ADI'>
+       <varRef name='Q{}a' slot='1'/>
+      </cast>
+     </for>
+    </fn>
+   </check>
+  </globalVariable>
+ </co>
+ <co id='2' binds=''>
+  <template name='Q{}copy.element' flags='os' line='33' module='basic.xsl' slots='0'>
+   <copy role='body' ns='=http://www.w3.org/1999/XSL/Transform dme=http://www.mozarteum.at/ns/dme mei=http://www.music-encoding.org/ns/mei saxon=~ xs=~ xsl=~ xml=~' line='35' flags='cin' sit='1'>
+    <applyT role='content' flags='c' bSlot='-1'>
+     <slash role='select'>
+      <treat as='N' diag='14|2|XPTY0020|'>
+       <dot flags='a'/>
+      </treat>
+      <sequence>
+       <axis name='attribute' nodeTest='NA'/>
+       <axis name='child' nodeTest='N u[NT,NP,NE,NC]'/>
+      </sequence>
+     </slash>
+    </applyT>
+   </copy>
+  </template>
+ </co>
+ <co id='3' binds='4 5 1 3 3 0 3 6'>
+  <mode onNo='TC' flags='dW' patternSlots='0'>
+   <templateRule prec='1' prio='0.5' seq='2' rank='2' minImp='0' slots='0' matches='NE nQ{http://www.music-encoding.org/ns/mei}scoreDef' flags='s' line='20' module='reorder-staves.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='NE nQ{http://www.music-encoding.org/ns/mei}scoreDef'/>
+     <vc defaultElementNS='http://www.music-encoding.org/ns/mei' ns='=http://www.w3.org/1999/XSL/Transform array=~ dita=http://dita-ot.sourceforge.net dme=http://www.mozarteum.at/ns/dme functx=http://www.functx.com ixsl=~ map=~ mei=http://www.music-encoding.org/ns/mei xd=http://www.oxygenxml.com/ns/doc/xsl xi=http://www.w3.org/2001/XInclude xs=~ xsl=~ xml=~' line='20' op='ne' onEmpty='1'>
+      <cast flags='ae' as='?AS'>
+       <attVal name='Q{}corresp'/>
+      </cast>
+      <fn name='concat'>
+       <sequence>
+        <str val='#'/>
+        <gVarRef name='Q{}P_SOURCE' bSlot='0'/>
+       </sequence>
+      </fn>
+     </vc>
+    </p.withPredicate>
+    <copyOf role='action' defaultElementNS='http://www.music-encoding.org/ns/mei' ns='=http://www.w3.org/1999/XSL/Transform array=~ dita=http://dita-ot.sourceforge.net dme=http://www.mozarteum.at/ns/dme functx=http://www.functx.com ixsl=~ map=~ mei=http://www.music-encoding.org/ns/mei xd=http://www.oxygenxml.com/ns/doc/xsl xi=http://www.w3.org/2001/XInclude xs=~ xsl=~ xml=~' line='21' flags='c'>
+     <slash simple='2'>
+      <filter flags='b'>
+       <slash simple='2'>
+        <filter flags='b'>
+         <axis name='following-sibling' nodeTest='NE nQ{http://www.music-encoding.org/ns/mei}choice'/>
+         <vc op='eq' onEmpty='0'>
+          <cast flags='ae' as='?AS'>
+           <attVal name='Q{}type'/>
+          </cast>
+          <str val='scoring'/>
+         </vc>
+        </filter>
+        <axis name='child' nodeTest='NE'/>
+       </slash>
+       <vc op='eq' onEmpty='0'>
+        <cast flags='ae' as='?AS'>
+         <attVal name='Q{}corresp'/>
+        </cast>
+        <gVarRef name='Q{http://saxon.sf.net/generated-variable}gg830522074' bSlot='1'/>
+       </vc>
+      </filter>
+      <axis name='child' nodeTest='NE nQ{http://www.music-encoding.org/ns/mei}scoreDef'/>
+     </slash>
+    </copyOf>
+   </templateRule>
+   <templateRule prec='1' prio='0.5' seq='3' rank='2' minImp='0' slots='0' matches='NE nQ{http://www.music-encoding.org/ns/mei}choice' flags='s' line='27' module='reorder-staves.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='NE nQ{http://www.music-encoding.org/ns/mei}choice'/>
+     <vc defaultElementNS='http://www.music-encoding.org/ns/mei' ns='=http://www.w3.org/1999/XSL/Transform array=~ dita=http://dita-ot.sourceforge.net dme=http://www.mozarteum.at/ns/dme functx=http://www.functx.com ixsl=~ map=~ mei=http://www.music-encoding.org/ns/mei xd=http://www.oxygenxml.com/ns/doc/xsl xi=http://www.w3.org/2001/XInclude xs=~ xsl=~ xml=~' line='27' op='eq' onEmpty='0'>
+      <cast flags='ae' as='?AS'>
+       <attVal name='Q{}type'/>
+      </cast>
+      <str val='scoring'/>
+     </vc>
+    </p.withPredicate>
+    <empty role='action'/>
+   </templateRule>
+   <templateRule prec='1' prio='0.0' seq='4' rank='1' minImp='0' slots='5' matches='NE nQ{http://www.music-encoding.org/ns/mei}measure' flags='s' line='80' module='reorder-staves.xsl'>
+    <p.nodeTest role='match' test='NE nQ{http://www.music-encoding.org/ns/mei}measure'/>
+    <let role='action' defaultElementNS='http://www.music-encoding.org/ns/mei' ns='=http://www.w3.org/1999/XSL/Transform array=~ dita=http://dita-ot.sourceforge.net dme=http://www.mozarteum.at/ns/dme functx=http://www.functx.com ixsl=~ map=~ mei=http://www.music-encoding.org/ns/mei xd=http://www.oxygenxml.com/ns/doc/xsl xi=http://www.w3.org/2001/XInclude xs=~ xsl=~ xml=~' line='89' var='Q{http://saxon.sf.net/generated-variable}v1' as='1FM k[AS] v[1AO]' slot='0' flags='l'>
+     <check card='1' diag='0|0||map:get'>
+      <gVarRef name='Q{}map_staves_order' bSlot='2'/>
+     </check>
+     <copy line='82' flags='cin' sit='1NE nQ{http://www.music-encoding.org/ns/mei}measure'>
+      <sequence role='content'>
+       <applyT bSlot='3'>
+        <axis role='select' name='attribute' nodeTest='NA'/>
+       </applyT>
+       <applyT line='83' bSlot='4'>
+        <slash role='select'>
+         <first>
+          <axis name='child' nodeTest='NE nQ{http://www.music-encoding.org/ns/mei}staff'/>
+         </first>
+         <fn name='reverse'>
+          <axis name='preceding-sibling' nodeTest='NE'/>
+         </fn>
+        </slash>
+       </applyT>
+       <let line='85' var='Q{}currentMeasure' as='1NE' slot='1'>
+        <dot type='1NE nQ{http://www.music-encoding.org/ns/mei}measure' flags='a'/>
+        <let line='89' var='Q{http://saxon.sf.net/generated-variable}v0' as='*NE nQ{http://www.music-encoding.org/ns/mei}staff' slot='2' flags='l'>
+         <slash simple='1'>
+          <varRef name='Q{}currentMeasure' slot='1'/>
+          <axis name='child' nodeTest='NE nQ{http://www.music-encoding.org/ns/mei}staff'/>
+         </slash>
+         <sequence line='87'>
+          <forEach>
+           <to>
+            <int val='1'/>
+            <gVarRef name='Q{}count_staves' bSlot='5'/>
+           </to>
+           <let line='88' var='Q{}currentItem' as='1' slot='3'>
+            <dot type='1ADI'/>
+            <let line='91' var='Q{http://saxon.sf.net/generated-variable}v2' as='1AS' slot='4' flags='l'>
+             <convert from='ADI' to='AS'>
+              <varRef name='Q{}currentItem' slot='3'/>
+             </convert>
+             <forEach line='89'>
+              <filter flags='b'>
+               <varRef name='Q{http://saxon.sf.net/generated-variable}v0' slot='2'/>
+               <vc op='eq' onEmpty='0'>
+                <ifCall name='Q{http://www.w3.org/2005/xpath-functions/map}get' type='*'>
+                 <varRef name='Q{http://saxon.sf.net/generated-variable}v1' slot='0'/>
+                 <check card='1' diag='0|1||map:get'>
+                  <cast flags='ae' as='?AS'>
+                   <attVal name='Q{}n'/>
+                  </cast>
+                 </check>
+                </ifCall>
+                <varRef name='Q{}currentItem' slot='3'/>
+               </vc>
+              </filter>
+              <copy line='91' flags='cinl' sit='1NE nQ{http://www.music-encoding.org/ns/mei}staff'>
+               <sequence role='content'>
+                <att name='n' flags='l'>
+                 <varRef name='Q{http://saxon.sf.net/generated-variable}v2' slot='4'/>
+                </att>
+                <applyT line='92' bSlot='6'>
+                 <sequence role='select'>
+                  <axis name='attribute' nodeTest='NA d[NA,NA nQ{}n]'/>
+                  <axis name='child' nodeTest='N u[NT,NP,NE,NC]'/>
+                 </sequence>
+                </applyT>
+               </sequence>
+              </copy>
+             </forEach>
+            </let>
+           </let>
+          </forEach>
+          <callT line='97' name='Q{}update_staff_controlEvents' bSlot='7'>
+           <withParam name='Q{}elements' flags='c' as='*NE'>
+            <slash line='98' simple='2'>
+             <filter flags='b'>
+              <axis name='child' nodeTest='NE nQ{http://www.music-encoding.org/ns/mei}staff'/>
+              <fn name='empty'>
+               <axis name='following-sibling' nodeTest='NE nQ{http://www.music-encoding.org/ns/mei}staff'/>
+              </fn>
+             </filter>
+             <axis name='following-sibling' nodeTest='NE'/>
+            </slash>
+           </withParam>
+          </callT>
+         </sequence>
+        </let>
+       </let>
+      </sequence>
+     </copy>
+    </let>
+   </templateRule>
+   <templateRule prec='1' prio='-0.5' seq='1' part='1' rank='0' minImp='0' slots='0' matches='NA' flags='s' line='27' module='basic.xsl'>
+    <p.nodeTest role='match' test='NA'/>
+    <copy role='action' ns='=http://www.w3.org/1999/XSL/Transform dme=http://www.mozarteum.at/ns/dme mei=http://www.music-encoding.org/ns/mei saxon=~ xs=~ xsl=~ xml=~' line='29' flags='cin' sit='1N'>
+     <applyT role='content' flags='c' bSlot='-1'>
+      <sequence role='select'>
+       <axis name='attribute' nodeTest='NA'/>
+       <axis name='child' nodeTest='N u[NT,NP,NE,NC]'/>
+      </sequence>
+     </applyT>
+    </copy>
+   </templateRule>
+   <templateRule prec='1' prio='-0.5' seq='1' rank='0' minImp='0' slots='0' matches='N' flags='s' line='27' module='basic.xsl'>
+    <p.nodeTest role='match' test='N u[NT,NP,NE,NC]'/>
+    <copy role='action' ns='=http://www.w3.org/1999/XSL/Transform dme=http://www.mozarteum.at/ns/dme mei=http://www.music-encoding.org/ns/mei saxon=~ xs=~ xsl=~ xml=~' line='29' flags='cin' sit='1N'>
+     <applyT role='content' flags='c' bSlot='-1'>
+      <sequence role='select'>
+       <axis name='attribute' nodeTest='NA'/>
+       <axis name='child' nodeTest='N u[NT,NP,NE,NC]'/>
+      </sequence>
+     </applyT>
+    </copy>
+   </templateRule>
+  </mode>
+ </co>
+ <co id='7' binds=''>
+  <globalParam name='Q{}global-context-item' as='*' line='13' module='reorder-staves.xsl' visibility='PUBLIC'>
+   <dot defaultElementNS='http://www.music-encoding.org/ns/mei' ns='=http://www.w3.org/1999/XSL/Transform array=~ dita=http://dita-ot.sourceforge.net dme=http://www.mozarteum.at/ns/dme functx=http://www.functx.com ixsl=~ map=~ mei=http://www.music-encoding.org/ns/mei xd=http://www.oxygenxml.com/ns/doc/xsl xi=http://www.w3.org/2001/XInclude xs=~ xsl=~ xml=~' line='13' flags='a'/>
+  </globalParam>
+ </co>
+ <co id='4' binds=''>
+  <globalParam name='Q{}P_SOURCE' as='1AS' line='9' module='reorder-staves.xsl' visibility='PUBLIC' flags='i'/>
+ </co>
+ <co id='8' binds=''>
+  <globalParam name='Q{}P_STAVES_MAPPING' as='?AS' line='10' module='reorder-staves.xsl' visibility='PUBLIC'>
+   <empty/>
+  </globalParam>
+ </co>
+ <co id='6' binds='1 3 6 3 6'>
+  <template name='Q{}update_staff_controlEvents' flags='os' line='113' module='reorder-staves.xsl' slots='1'>
+   <sequence role='body' defaultElementNS='http://www.music-encoding.org/ns/mei' ns='=http://www.w3.org/1999/XSL/Transform array=~ dita=http://dita-ot.sourceforge.net dme=http://www.mozarteum.at/ns/dme functx=http://www.functx.com ixsl=~ map=~ mei=http://www.music-encoding.org/ns/mei xd=http://www.oxygenxml.com/ns/doc/xsl xi=http://www.w3.org/2001/XInclude xs=~ xsl=~ xml=~' line='114'>
+    <param name='Q{}elements' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <forEach line='116'>
+     <varRef name='Q{}elements' slot='0'/>
+     <choose line='118'>
+      <fn name='exists'>
+       <slash simple='1'>
+        <treat as='N' diag='14|2|XPTY0020|'>
+         <dot/>
+        </treat>
+        <axis name='attribute' nodeTest='NA nQ{}staff'/>
+       </slash>
+      </fn>
+      <copy line='120' flags='cin' sit='1'>
+       <sequence role='content'>
+        <att name='staff' flags='l'>
+         <convert from='AO' to='AS'>
+          <ifCall name='Q{http://www.w3.org/2005/xpath-functions/map}get' type='*'>
+           <check card='1' diag='0|0||map:get'>
+            <gVarRef name='Q{}map_staves_order' bSlot='0'/>
+           </check>
+           <check card='1' diag='0|1||map:get'>
+            <cast flags='ae' as='?AS'>
+             <slash>
+              <treat as='N' diag='14|2|XPTY0020|'>
+               <dot/>
+              </treat>
+              <attVal name='Q{}staff'/>
+             </slash>
+            </cast>
+           </check>
+          </ifCall>
+         </convert>
+        </att>
+        <applyT line='121' bSlot='1'>
+         <except role='select' op='except'>
+          <slash simple='1'>
+           <treat as='N' diag='14|2|XPTY0020|'>
+            <dot/>
+           </treat>
+           <axis name='attribute' nodeTest='NA'/>
+          </slash>
+          <slash simple='1'>
+           <treat as='N' diag='14|2|XPTY0020|'>
+            <dot/>
+           </treat>
+           <axis name='attribute' nodeTest='NA nQ{}staff'/>
+          </slash>
+         </except>
+        </applyT>
+        <choose line='122'>
+         <fn name='exists'>
+          <slash simple='1'>
+           <treat as='N' diag='14|3|XPTY0020|'>
+            <dot/>
+           </treat>
+           <axis name='child' nodeTest='N'/>
+          </slash>
+         </fn>
+         <callT line='123' name='Q{}update_staff_controlEvents' bSlot='2'>
+          <withParam name='Q{}elements' flags='c' as='*N'>
+           <slash line='124' simple='1'>
+            <treat as='N' diag='14|3|XPTY0020|'>
+             <dot/>
+            </treat>
+            <axis name='child' nodeTest='N'/>
+           </slash>
+          </withParam>
+         </callT>
+        </choose>
+       </sequence>
+      </copy>
+      <true/>
+      <copy line='131' flags='cin' sit='1'>
+       <sequence role='content'>
+        <applyT bSlot='3'>
+         <slash role='select' simple='1'>
+          <treat as='N' diag='14|2|XPTY0020|'>
+           <dot/>
+          </treat>
+          <axis name='attribute' nodeTest='NA'/>
+         </slash>
+        </applyT>
+        <choose line='132'>
+         <fn name='exists'>
+          <slash simple='1'>
+           <treat as='N' diag='14|3|XPTY0020|'>
+            <dot/>
+           </treat>
+           <axis name='child' nodeTest='N'/>
+          </slash>
+         </fn>
+         <callT line='133' name='Q{}update_staff_controlEvents' bSlot='4'>
+          <withParam name='Q{}elements' flags='c' as='*N'>
+           <slash line='134' simple='1'>
+            <treat as='N' diag='14|3|XPTY0020|'>
+             <dot/>
+            </treat>
+            <axis name='child' nodeTest='N'/>
+           </slash>
+          </withParam>
+         </callT>
+        </choose>
+       </sequence>
+      </copy>
+     </choose>
+    </forEach>
+   </sequence>
+  </template>
+ </co>
+ <co id='1' binds='8 8'>
+  <globalVariable name='Q{}map_staves_order' as='*FM k[AS] v[1AO]' line='34' module='reorder-staves.xsl' visibility='PRIVATE'>
+   <choose defaultElementNS='http://www.music-encoding.org/ns/mei' ns='=http://www.w3.org/1999/XSL/Transform array=~ dita=http://dita-ot.sourceforge.net dme=http://www.mozarteum.at/ns/dme functx=http://www.functx.com ixsl=~ map=~ mei=http://www.music-encoding.org/ns/mei xd=http://www.oxygenxml.com/ns/doc/xsl xi=http://www.w3.org/2001/XInclude xs=~ xsl=~ xml=~' line='36'>
+    <gVarRef name='Q{}P_STAVES_MAPPING' bSlot='0'/>
+    <sequence line='37'>
+     <treat as='FM k[AS] v[1AO]' diag='3|0|XTTE0570|map_staves_order'>
+      <message>
+       <valueOf role='select'>
+        <str val='Using staves mapping from the parameter $P_STAVES_MAPPING!'/>
+       </valueOf>
+       <str role='terminate' val='no'/>
+       <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+      </message>
+     </treat>
+     <treat line='38' as='FM k[AS] v[1AO]' diag='3|0|XTTE0570|map_staves_order'>
+      <fn name='parse-json'>
+       <gVarRef name='Q{}P_STAVES_MAPPING' bSlot='1'/>
+      </fn>
+     </treat>
+    </sequence>
+    <true/>
+    <sequence line='41'>
+     <treat as='FM k[AS] v[1AO]' diag='3|0|XTTE0570|map_staves_order'>
+      <message>
+       <valueOf role='select'>
+        <str val='Using staves mapping from config-staves-mapping.json!'/>
+       </valueOf>
+       <str role='terminate' val='no'/>
+       <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+      </message>
+     </treat>
+     <treat line='42' as='FM k[AS] v[1AO]' diag='3|0|XTTE0570|map_staves_order'>
+      <fn name='json-doc'>
+       <str val='config-staves-mapping.json'/>
+      </fn>
+     </treat>
+    </sequence>
+   </choose>
+  </globalVariable>
+ </co>
+ <co id='5' binds='4'>
+  <globalVariable name='Q{http://saxon.sf.net/generated-variable}gg830522074' as='1AS' line='21' module='reorder-staves.xsl' visibility='PRIVATE'>
+   <fn defaultElementNS='http://www.music-encoding.org/ns/mei' ns='=http://www.w3.org/1999/XSL/Transform array=~ dita=http://dita-ot.sourceforge.net dme=http://www.mozarteum.at/ns/dme functx=http://www.functx.com ixsl=~ map=~ mei=http://www.music-encoding.org/ns/mei xd=http://www.oxygenxml.com/ns/doc/xsl xi=http://www.w3.org/2001/XInclude xs=~ xsl=~ xml=~' line='21' name='concat'>
+    <sequence>
+     <str val='#'/>
+     <gVarRef name='Q{}P_SOURCE' bSlot='0'/>
+    </sequence>
+   </fn>
+  </globalVariable>
+ </co>
+ <overridden/>
+ <output>
+  <property name='method' value='xml'/>
+  <property name='indent' value='yes'/>
+  <property name='standalone' value='no'/>
+  <property name='encoding' value='UTF-8'/>
+  <property name='use-character-maps' value=' entities'/>
+  <property name='Q{http://saxon.sf.net/}stylesheet-version' value='30'/>
+ </output>
+ <charMap name='Q{}entities'>
+  <m c='8194' s='&amp;#8194;'/>
+  <m c='57955' s='&amp;#xe263;'/>
+  <m c='324' s='&amp;#324;'/>
+  <m c='59996' s='&amp;#xea5c;'/>
+  <m c='119051' s='&amp;#x1D10B;'/>
+  <m c='8198' s='&amp;#8198;'/>
+  <m c='171' s='&amp;'/>
+  <m c='8211' s='&amp;#8211;'/>
+  <m c='8195' s='&amp;#8195;'/>
+  <m c='59990' s='&amp;#xea56;'/>
+  <m c='160' s='&amp;#160;'/>
+ </charMap>
+ <strip>
+  <s test='NE' prec='1'/>
+ </strip>
+ <decimalFormat/>
+</package>
+<?Σ bf946025?>

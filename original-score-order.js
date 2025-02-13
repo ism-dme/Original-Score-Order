@@ -13,12 +13,25 @@ if (!["1", "4"].includes(movement)) {
 
 // Select the correct movement file
 const movementFile = movement === "1" ? firstMovement : fourthMovement;
-const outputFile = `./mei/output/dmeedtA_165-00${movement}_Autograph.mei`;
+const outputFile = `./mei/out/dmeedtA_165-00${movement}_Autograph.mei`;
 
 console.log('Prcessing: ' + movementFile);
 
+const pStavesMapping = {
+    "1": 4,
+    "2": 5,
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 6,
+    "7": 7
+  }
+  
+  // Convert object to JSON string and properly escape quotes
+const pStavesMappingStr = JSON.stringify(pStavesMapping).replace(/"/g, '\\"');
+
 // Define commands
-const reorderStavesCmd = `node node_modules/xslt3/xslt3.js "-s:./mei/source/${movementFile}" "-xsl:./dist/sef/reorder-staves.sef.json" "-o:./mei/temp_reordered.mei"`;
+const reorderStavesCmd = `node node_modules/xslt3/xslt3.js "-s:./mei/source/${movementFile}" "-xsl:./dist/sef/reorder-staves.sef.json" "-o:./mei/temp_reordered.mei" "P_SOURCE=source_A"  "P_STAVES_MAPPING=${pStavesMappingStr}"`;
 const extractPartsCmd = `node node_modules/xslt3/xslt3.js "-s:./mei/temp_reordered.mei" "-xsl:./dist/sef/extract-parts.sef.json" "-o:${outputFile}" "?P_OVERWRITE_FILE=true()"`;
 
 

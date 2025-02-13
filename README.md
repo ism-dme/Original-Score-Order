@@ -24,23 +24,23 @@ The differences in the score order are as follows:
 
 <hr>
 
-DME has developed a tool that transforms the standard score order to the original score order. The process consists of the following steps:
+DME has developed a tools pipeline that transforms the standard score order to the original score order. The process consists of the following steps:
 
-1. Replacing the `<scoreDef>` element and reordering the staves.
+1. Reordering the staves.
 2. Splitting oboe parts.
 
 <img width="600" alt="Extraction of the first violin part." src="./docs/pct/transformationPipeline.png">
 
 ## Installation and Usage
 
-The transformation tool is implemented in XSLT. For users of the oXygen XML Editor, the repository includes a project file named `original_scoring.xpr`, which can be opened either by double-clicking it in the file explorer or by selecting it from the project view within the oXygen XML Editor.
+The transformation pipeline is implemented in XSLT. For users of the oXygen XML Editor, the repository includes a project file named `original-score-order.xpr`, which can be opened either by double-clicking it in the file explorer or by selecting it from the project view within the oXygen XML Editor.
 
-After opening the project, you can apply the transformation scenario `original-scoring-KV165` to the files located in `./mei/source` folder.
+After opening the project, you can apply the transformation scenario `original-score-order-KV165` to the files located in `./mei/source` folder.
 
 <img width="400" alt="Extraction of the first violin part." src="./docs/pct/transformationScenario.png">
 
 
-This will output transformed MEI files to the `./mei/source/output` folder.
+This will output transformed MEI files to the `./mei/source/out` folder.
 
 <hr>
 
@@ -54,22 +54,26 @@ npm i
 ```
 # Run transformation
 # Replace <movementNo> by '1' or '4' depending which movement of KV 165 you want to process.
-node .\original_scoring.js <movementNo>
+node .\original-score-order.js <movementNo>
 ```
 
 # Developing
 
-The pipeline consists of two distinct XSLT transformations:
+The transformation pipeline consists of two distinct tools:
 
-1. `reorder_staves`
-2. `extract-parts`
+1. `Reorder Staves`
+2. `Extract Parts`
 
 The folder `./dist`contains compiled files for these transformations that can be used with the Saxon processor. The folder `./dist/xsef` contains files for use with the Java version of the Saxon and the folder `./dist/sef` contains files for use with saxonJS.
 
 THe source files are located in the following folders:
 
-1.  `./reorder_staves`                        
+1.  `./Reorder-Staves`                        
 2. `./Extract-Parts` (as submodule)
 
+The tools can be used separately from each other. See the REDME files in the repositories for usage details.
+
 Note that development takes place in an internal GitLab repository, and the GithUb serves only as a publishing platform.
+
+
 
